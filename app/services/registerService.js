@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
+const ObjectId = mongoose.Types.ObjectId;
 
-import BrokerModel from '../models/registerBroker';
-import { Logger } from 'mongodb';
+import BrokerModel from '../models/BrokerModel';
 
 const create = async (req, res) => {
   const name = req.body.name;
@@ -38,8 +38,22 @@ const create = async (req, res) => {
     });
 
     newBroker.save();
+
+    res.send(newBroker);
   } catch (error) {
     res.status(500).send({ message: error.message || 'Erro ao salvar' });
+  }
+};
+
+const findAllBroker = async (_, res) => {
+  try {
+    const allBroker = await BrokerModel.find({}, { _id: 0 });
+
+    allBroker.sort((a, b) => a.name - b.name);
+
+    res.send(allBroker);
+  } catch (error) {
+    res.status(500).send({ message: 'Erro ao buscar Corretora' });
   }
 };
 
@@ -124,6 +138,7 @@ const remove = async (req, res) => {
 };
 
 exports.create = create;
+exports.findAllBroker = findAllBroker;
 exports.findByNameBroker = findByNameBroker;
 exports.update = update;
 exports.remove = remove;
