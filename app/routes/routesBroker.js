@@ -1,11 +1,11 @@
 const express = require('express');
-const registerRouter = express.Router();
-const registerService = require('../services/registerService.js');
+const registerRouterBroker = express.Router();
+const registerServiceBroker = require('../services/registerService.js');
 
-registerRouter.post('/', registerService.create);
-registerRouter.get('/', registerService.findAllBroker);
-registerRouter.get('/name', registerService.findByNameBroker);
-registerRouter.put('/:id', registerService.update);
-registerRouter.delete('/:id', registerService.remove);
+registerRouterBroker.post('/', registerServiceBroker.create);
+registerRouterBroker.get('/', registerServiceBroker.findAllBroker);
+registerRouterBroker.get('/name', registerServiceBroker.findByNameBroker);
+registerRouterBroker.put('/:id', registerServiceBroker.update);
+registerRouterBroker.delete('/:id', registerServiceBroker.remove);
 
-module.exports = registerRouter;
+module.exports = registerRouterBroker;
