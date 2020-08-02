@@ -1,6 +1,6 @@
 const express = require('express');
-const registerService = require('../services/registerService');
 const registerRouter = express.Router();
+const registerService = require('../services/registerService.js');
 
 registerRouter.post('/', registerService.create);
 registerRouter.get('/', registerService.findAllBroker);

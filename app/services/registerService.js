@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 const ObjectId = mongoose.Types.ObjectId;
 
 import BrokerModel from '../models/BrokerModel';
@@ -137,8 +137,4 @@ const remove = async (req, res) => {
   }
 };
 
-exports.create = create;
-exports.findAllBroker = findAllBroker;
-exports.findByNameBroker = findByNameBroker;
-exports.update = update;
-exports.remove = remove;
+export { create, findAllBroker, findByNameBroker, update, remove };
