@@ -131,9 +131,9 @@ const remove = async (req, res) => {
 
   try {
     await BrokerModel.findByIdAndRemove(id);
-    res.send({ message: 'Contadora excluida com sucesso' });
+    res.send({ message: 'Corretora excluida com sucesso' });
   } catch (error) {
-    res.status(500).send({ message: 'Não foi possível deletar a Contadora.' });
+    res.status(500).send({ message: 'Não foi possível deletar a Corretora.' });
   }
 };
 
