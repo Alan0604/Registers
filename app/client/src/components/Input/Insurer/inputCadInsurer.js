@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 
-export default function InputCadInsurer({ onCreateInsurer, isOpenInsurer }) {
+export default function InputCadInsurer({ onCreate, isOpen }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const buttonStyle = isModalOpen ? styles.buttonInvisible : styles.button;
 
   useEffect(() => {
-    if (!isOpenInsurer) {
+    if (!isOpen) {
       setIsModalOpen(false);
     }
-  }, [isOpenInsurer]);
+  }, [isOpen]);
 
   const handleModal = () => {
-    onCreateInsurer(isModalOpen);
+    onCreate(isModalOpen);
     setIsModalOpen(true);
   };
 
