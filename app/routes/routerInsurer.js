@@ -1,11 +1,11 @@
 const express = require('express');
-const registerRouterInserur = express.Router();
+const registerRouterInsurer = express.Router();
 const registerServiceInsurer = require('../services/registerServiceInsurer');
 
-registerRouterInserur.post('/', registerServiceInsurer.create);
-registerRouterInserur.get('/', registerServiceInsurer.findAllInsurer);
-registerRouterInserur.get('/name', registerServiceInsurer.findByNameInsurer);
-registerRouterInserur.put('/:id', registerServiceInsurer.update);
-registerRouterInserur.delete('/:id', registerServiceInsurer.remove);
+registerRouterInsurer.post('/', registerServiceInsurer.create);
+registerRouterInsurer.get('/', registerServiceInsurer.findAllInsurer);
+registerRouterInsurer.get('/name', registerServiceInsurer.findByNameInsurer);
+registerRouterInsurer.put('/:id', registerServiceInsurer.update);
+registerRouterInsurer.delete('/:id', registerServiceInsurer.remove);
 
-module.exports = registerRouterInserur;
+module.exports = registerRouterInsurer;
