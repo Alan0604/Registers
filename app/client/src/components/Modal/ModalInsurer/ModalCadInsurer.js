@@ -5,8 +5,6 @@ export default function InputCadBroker(onSave, onClose, selectedInsurer) {
   const {
     _id,
     name,
-    susep,
-    branch,
     cnpj,
     zip_code,
     city_name,
